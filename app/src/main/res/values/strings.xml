@@ -3,4 +3,7 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="minimum_password_length_is_8">Minimum password length is 8</string>
+    <string name="enter_correct_email">Enter correct email address</string>
+
 </resources>

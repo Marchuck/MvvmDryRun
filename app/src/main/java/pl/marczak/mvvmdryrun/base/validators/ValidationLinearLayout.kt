@@ -1,4 +1,4 @@
-package pl.marczak.mvvmdryrun.base
+package pl.marczak.mvvmdryrun.base.validators
 
 import android.content.Context
 import android.util.AttributeSet
@@ -16,15 +16,17 @@ class ValidationLinearLayout : LinearLayout, ValidationContainer {
 
     constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
 
-    override fun getValidationContext(): ValidationContext? {
+    override
+    fun getValidationContext(): ValidationContext? {
         return if (_validationContext == null) {
             _idleValidationContext
         } else _validationContext
 
     }
 
-    override fun setValidationContext(context: ValidationContext?) {
-        _validationContext = context
+    override
+    fun setValidationContext(validationContext: ValidationContext?) {
+        _validationContext = validationContext
         if (_idleValidationContext.validators != null && _idleValidationContext.validators.size > 0) {
             for (validator in _idleValidationContext.validators) {
                 _validationContext!!.addValidator(validator)

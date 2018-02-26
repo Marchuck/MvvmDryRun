@@ -1,11 +1,11 @@
-package pl.marczak.mvvmdryrun.login
+package pl.marczak.mvvmdryrun.base.validators
 
-import javax.inject.Inject
+class MinLengthParams(val validationMessage: String, val minLength: Int) {
 
-
-class MinLengthParams constructor(val validationMessage: String, val minLength: Int) {
 
     companion object {
+
+        @JvmStatic
         fun create(validationMessage: String, minLength: Int): MinLengthParams {
             return MinLengthParams(validationMessage, minLength)
         }

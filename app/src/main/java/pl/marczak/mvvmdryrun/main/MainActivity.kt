@@ -44,9 +44,8 @@ class MainActivity : AppCompatActivity(), HasActivityInjector {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_stack)
 
-
         val loginScreen = LoginViewModel(navigationService!!, this)
-        navigationService .showViewModel(loginScreen, null)
+        navigationService.showViewModel(loginScreen, null)
 
     }
 
@@ -57,7 +56,7 @@ class MainActivity : AppCompatActivity(), HasActivityInjector {
         }
 
         if (supportFragmentManager.backStackEntryCount > 1) {
-            if (navigationService?.goingBack()!!) {
+            if (navigationService.goingBack()) {
                 supportFragmentManager.popBackStack()
             }
         } else {

@@ -1,4 +1,4 @@
-package pl.marczak.mvvmdryrun.base
+package pl.marczak.mvvmdryrun.base.validators
 
 import java.io.InvalidClassException
 

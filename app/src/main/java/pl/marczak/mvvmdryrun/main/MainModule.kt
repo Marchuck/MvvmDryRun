@@ -15,7 +15,7 @@ class MainModule {
 
     @Provides
     @PerActivity
-    fun providesNavService(fm: FragmentManager) = NavigationService(fm)
+    fun providesNavService(fm: FragmentManager,mainActivity: MainActivity) = NavigationService(fm,mainActivity)
 
 
 }

@@ -1,11 +1,15 @@
 package pl.marczak.mvvmdryrun.base
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
+import android.support.v4.app.FragmentActivity
 import pl.marczak.mvvmdryrun.R
 import pl.marczak.mvvmdryrun.di.PerActivity
 
 @PerActivity
-open class NavigationService(var fragmentManager: android.support.v4.app.FragmentManager) {
+open class NavigationService(var fragmentManager: android.support.v4.app.FragmentManager,
+                             var activity: FragmentActivity) {
 
     internal var _overlayClass: Class<*>? = null
 
@@ -52,4 +56,16 @@ open class NavigationService(var fragmentManager: android.support.v4.app.Fragmen
             fragmentManager.popBackStack()
         }
     }
+
+    fun startActivity(classs: Class<out FragmentActivity>, bundle: Bundle? = null) {
+        val intent = Intent(activity, classs).apply {
+            if (bundle != null) {
+                putExtra(classs.javaClass.simpleName, bundle)
+            }
+        }
+        activity.startActivity(intent)
+    }
+
+
+
 }
